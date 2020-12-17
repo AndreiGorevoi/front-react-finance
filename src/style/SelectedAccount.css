@@ -1,0 +1,10 @@
+.title{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: blue;
+}
+
+.text{
+   font-family: Comic Sans MS, Comic Sans, cursive;
+    font-style: italic;
+    text-decoration: underline;
+}

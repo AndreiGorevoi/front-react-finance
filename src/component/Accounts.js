@@ -6,7 +6,10 @@ class Accounts extends Component{
     constructor(props) {
         super(props);
         this.state= {
-            accounts: []
+            accounts: [{
+                id: '',
+                name: '',
+            }]
         }
     }
 
@@ -25,14 +28,17 @@ class Accounts extends Component{
 
     render() {
         return(
-            <div>
+            <div className='card-deck'>
                 {this.state.accounts.map(
                     account=>
-                        <div>
-                            <p>{account.name}</p>
-                            <p>{account.balance}</p>
-                            <button className="btn btn-success">Choose the account</button>
+
+                        <div className="card; card border-success mb-3">
+                                <div className="card-body">
+                                    <h5 className="card-title">{account.name}</h5>
+                                    <a href={'http://localhost:3000/account/'+account.id} className="btn btn-primary">Select this account</a>
+                                </div>
                         </div>
+
                 )
                 }
             </div>

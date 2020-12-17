@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 class AddAccount extends Component{
     render() {
         return(
-            <div className='root'>
+            <div className='root2'>
                 <h2>New account</h2>
                 <input className="form-control" id='name' type='text' placeholder='Name of account'/><br/>
                 <input className="form-control"  id='balance' type='number'defaultValue='0' placeholder='balance'/><br/>
@@ -23,10 +23,10 @@ class AddAccount extends Component{
 function addNewAccount(){
     let account ={
         name : document.getElementById('name').value,
-        balance : document.getElementById('balance').value
     };
+    let balance = document.getElementById('balance').value
     //TODO: name of account in alert
-    axios.post("http://localhost:8081/account", account).then(response =>{
+    axios.post("http://localhost:8081/account/?startBalance="+balance, account).then(response =>{
         alert("Account has been added!");
         window.location.href="http://localhost:3000/";
     });
